@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffe6eb;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: default;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      width: 320px;
+    }
+
+    h1 {
+      color: #e6005c;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #e6005c;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #ccc;
+      position:absolute;
+    }
+
+    .celebrate {
+      display: none;
+    }
+
+    .celebrate h2 {
+      color: #e6005c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <div id="question">
+      <h1>Will you be my Valentine?</h1>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <div class="celebrate" id="celebrate">
+      <h2>Congratulations! 🎉</h2>
+      <p>You just made this Valentine very happy ❤️</p>
+    </div>
+  </div>
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const card = document.getElementById("card");
+    const question = document.getElementById("question");
+    
+    // Move "No" button when hovered
+    noBtn.addEventListener("mouseover", () => {
+      const cardRect = card.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+
+      const maxX = cardRect.width - btnRect.width;
+      const maxY = cardRect.height - btnRect.height;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Yes button action
+    yesBtn.addEventListener("click", () => {
+      question.style.display = "none";
+      celebrate.style.display = "block";
+    });
+
+  </script>
+
+</body>
+</html>
