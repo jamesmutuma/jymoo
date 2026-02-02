@@ -56,13 +56,13 @@
       color: #e6005c;
     }
     .valentine-img{
-      margine-top:20px;
+      margin-top:20px;
       width:100%;
       max-width:250px;
       border-radius:12px;
     }
     /*fade +pope animationfor the celebrate section*/
-    @keyframes popfade{
+    @keyframes popFade{
       0%{
         opacity:0;
         transform:scale(0.5);
@@ -77,7 +77,7 @@
       }
     }
     .celebrate.show{
-      animation:popFade 0.6s ease forwards;
+      animation:popfade 0.6s ease forwards;
     }
     /* Heart style */
 .heart {
@@ -187,7 +187,7 @@ function createHeart() {
       question.style.display = "none";
       celebrate.style.display = "block";
       //add animation class
-      celebrate.classlist.add("show");
+      celebrate.classList.add("show");
       //generate multiple floating hearts
       for (let i=0; i<15; i++){
         setTimeout(createHeart, i*150);}
