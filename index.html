@@ -140,6 +140,10 @@
       <!--new image-->
       <img src="vll.jpeg" alt="valentine moment"
         class="valentine-img">
+      <button id="nextBtn" style="display:none;
+        margin-top:20px;">
+        Click here if you're smilling right now👀
+      </button>
     </div>
   </div>
   <script>
@@ -188,12 +192,19 @@ function createHeart() {
       celebrate.style.display = "block";
       //add animation class
       celebrate.classList.add("show");
+      //nxtBtn
+      nextBtn.style.display="inline-block";
       //generate multiple floating hearts
       for (let i=0; i<15; i++){
         setTimeout(createHeart, i*150);}
       //open default email client with your email pre-filled
       window.location.href =
         "mailto:jamesmutuma432@gmail.com?subject=yes&body=I have said YES to being your valentin!🤩💖";
+    });
+    /*NEXT button to Whatsapp*/
+    nextBtn.addEventListener("click", () =>{
+      window.location.href=
+        "https://wa.me/254708256867?text=Next%20level%20unlocked%20%F0%9F%92%9E%20%F0%9F%94%93";
     });
 
   </script>
