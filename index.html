@@ -61,6 +61,24 @@
       max-width:250px;
       border-radius:12px;
     }
+    /*fade +pope animationfor the celebrate section*/
+    @keyframes popfade{
+      0%{
+        opacity:0;
+        transform:scale(0.5);
+      }
+      60%{
+        opacity:1;
+        transform:scale(1.2);
+      }
+      100%{
+        opacity:1;
+        transform:scale(1);
+      }
+    }
+    .celebrate.show{
+      animation:popFade 0.6s ease forwards;
+    }
   </style>
 </head>
 <body>
@@ -105,6 +123,8 @@
     yesBtn.addEventListener("click", () => {
       question.style.display = "none";
       celebrate.style.display = "block";
+      //add animation class
+      celebrate.classlist.add("show");
       //open default email client with your email pre-filled
       window.location.href =
         "mailto:jamesmutuma432@gmail.com?subject=yes&body=I have said YES to being your valentin!🤩💖";
