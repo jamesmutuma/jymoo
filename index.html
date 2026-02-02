@@ -89,7 +89,7 @@
   top: 50%;
   left: 50%;
   pointer-events: none;
-  animation: floatUp 3s ease forwards;
+  animation: floatUp 50s ease forwards;
 }
 
 .heart::before,
@@ -119,7 +119,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(calc(-50px + 100px * var(--randomX)), -150px) rotate(45deg);
+    transform: translate(calc(-50px + 100px * var(--randomX)), -500px) rotate(45deg);
     opacity: 0;
   }
 }
@@ -180,7 +180,7 @@ function createHeart() {
   // Remove heart after animation
   setTimeout(() => {
     heart.remove();
-  }, 3000);
+  }, 50000);
 }
     // Yes button action
     yesBtn.addEventListener("click", () => {
